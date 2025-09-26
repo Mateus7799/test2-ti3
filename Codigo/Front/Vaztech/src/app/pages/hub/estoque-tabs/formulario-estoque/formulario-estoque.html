@@ -1,0 +1,80 @@
+<form ngForm="form" #form class="flex gap-4 grow-0">
+  <fieldset class="border-2 p-4 border-primary-200 rounded-xl flex grow-0">
+    <legend class="text-primary font-semibold px-2">Informações sobre o item</legend>
+    <div class="flex flex-col gap-4">
+      <div class="flex gap-4">
+        <p-iftalabel>
+          <input
+            type="text"
+            name="produto"
+            id="produto"
+            pInputText
+            ngModel
+            required
+            placeholder="..."
+            class="w-72"
+          />
+          <label for="produto">Produto</label>
+        </p-iftalabel>
+        <p-iftalabel>
+          <input
+            type="text"
+            name="fornecedor"
+            id="fornecedor"
+            pInputText
+            ngModel
+            required
+            placeholder="..."
+          />
+          <label for="produto">Fornecedor</label>
+        </p-iftalabel>
+      </div>
+      <div class="flex">
+        <p-iftalabel class="flex flex-1">
+          <input
+            fluid
+            placeholder="..."
+            type="text"
+            name="modelo"
+            id="modelo"
+            pInputText
+            ngModel
+            required
+          />
+          <label for="modelo">Modelo</label>
+        </p-iftalabel>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="border-2 p-4 border-primary-200 rounded-xl flex grow-0 flex-col gap-4">
+    <legend class="text-primary font-semibold px-2">Informações sobre Aquisição</legend>
+    <p-iftalabel>
+      <p-datepicker
+        name="dataCompra"
+        locale="pt-BR"
+        ngModel
+        showIcon
+        iconDisplay="input"
+        #dataCompra="ngModel"
+        ngModel
+        placeholder="01/01/2000"
+        required
+        fluid
+      />
+      <label for="dataCompra">Data</label>
+    </p-iftalabel>
+    <p-iftalabel>
+      <p-inputnumber
+        ngModel
+        inputId="precoCompra"
+        mode="currency"
+        currency="BRL"
+        locale="pt-BR"
+        required
+        fluid
+        placeholder="R$ 0,00"
+      />
+      <label for="precoCompra">Preço</label>
+    </p-iftalabel>
+  </fieldset>
+</form>

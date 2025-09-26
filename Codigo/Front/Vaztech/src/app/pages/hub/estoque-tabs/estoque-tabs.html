@@ -1,0 +1,50 @@
+<main>
+  <!-- Abas -->
+  <p-tabs value="0">
+    <p-tablist>
+      <p-tab value="0">Inventário</p-tab>
+      <p-tab value="1">Adicionar</p-tab>
+    </p-tablist>
+    <p-tabpanels>
+      <p-tabpanel value="0">
+        <!-- Aba do Inventário -->
+        <!-- Top Bar -->
+        <div class="flex flex-1 justify-between items-center mb-4">
+          <section>
+            <p-iconfield iconPosition="left">
+              <p-inputicon class="pi pi-search" />
+              <input type="text" pInputText placeholder="Pesquisar" class="w-96" />
+            </p-iconfield>
+          </section>
+          <section>
+            <p-button label="Adicionar" icon="pi pi-plus" iconPos="right"></p-button>
+          </section>
+        </div>
+
+        <p-table [value]="itensEstoqueMock" stripedRows showGridlines>
+          <ng-template #header>
+            <tr>
+              <th>Nº de Série</th>
+              <th>Produto</th>
+              <th>Modelo</th>
+              <th>Status</th>
+            </tr>
+          </ng-template>
+          <ng-template #body let-item>
+            <tr>
+              <td>{{ item.numeroSerie }}</td>
+              <td>{{ item.produto }}</td>
+              <td>{{ item.modelo }}</td>
+              <td>{{ item.status }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </p-tabpanel>
+      <p-tabpanel value="1">
+        <!-- Aba do Componente do form -->
+        <!-- <p class="m-0">Componente da página do formulário vai estar aqui</p> -->
+        <app-formulario-estoque></app-formulario-estoque>
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
+</main>
